@@ -64,3 +64,18 @@ test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     6 | char * _strdup(const char * str) {
       |        ^~~~~~~
 3489203
+Fri, May  2, 2025 11:21:50 AM: 
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'searchTreeMap':
+treemap.c:83:53: error: passing argument 2 of 'tree->lower_than' makes pointer from integer without a cast [-Wint-conversion]
+   83 |         if(tree->lower_than(key, current->pair->key < 0)) current = current->left;
+      |                                  ~~~~~~~~~~~~~~~~~~~^~~
+      |                                                     |
+      |                                                     int
+treemap.c:83:53: note: expected 'void *' but argument is of type 'int'
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+8ef012e

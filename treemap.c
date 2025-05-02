@@ -80,7 +80,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     while(current != NULL){
         if(is_equal(tree, key, current->pair->key)) return current->pair;
 
-        if(tree->lower_than(key, current->pair->key < 0)) current = current->left;
+        if(tree->lower_than(key, current->pair->key) < 0) current = current->left;
         else current = current->right;
     }
 

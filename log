@@ -152,3 +152,15 @@ test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     6 | char * _strdup(const char * str) {
       |        ^~~~~~~
 1b3dd51
+Fri, May  2, 2025 11:43:42 AM: 
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'searchTreeMap':
+treemap.c:89:26: error: returning 'TreeNode *' from a function with incompatible return type 'Pair *' [-Wincompatible-pointer-types]
+   89 |     return tree->current = NULL;
+      |                          ^
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+22babd0

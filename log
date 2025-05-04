@@ -182,3 +182,18 @@ Fri, May  2, 2025 11:49:09 AM:
  tests:  11|6
 total_score: 15/70
 23fd0cd
+Sun, May  4, 2025  2:25:27 AM: 
+ treemap.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'insertTreeMap':
+treemap.c:53:15: error: unused variable 'parent' [-Werror=unused-variable]
+   53 |     TreeNode *parent = NULL;
+      |               ^~~~~~
+test.c: At top level:
+test.c:6:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+d3e5d87

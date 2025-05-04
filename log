@@ -216,3 +216,20 @@ cc1.exe: all warnings being treated as errors
 Sun, May  4, 2025  2:33:20 AM: 
  tests:  0|0
 55a2e15
+Sun, May  4, 2025  2:34:09 AM: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function 'insertTreeMap':
+treemap.c:51:54: error: 'return' with a value, in function returning void [-Wreturn-mismatch]
+   51 |     if((key == NULL) || (tree->root == NULL)) return NULL;
+      |                                                      ^~~~
+treemap.c:50:6: note: declared here
+   50 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+test.c: At top level:
+test.c:6:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    6 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+ad86ae9

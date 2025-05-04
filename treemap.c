@@ -88,14 +88,12 @@ TreeNode * minimum(TreeNode * x){
     TreeNode *current = x;
 
     if(current->left == NULL) return x;
-
-    return;
     
-    while(current != NULL){
+    while(current->left != NULL){
         current = current->left;
     }
 
-    return current->left;
+    return current;
 }
 
 

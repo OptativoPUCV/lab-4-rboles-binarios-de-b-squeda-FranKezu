@@ -90,8 +90,6 @@ TreeNode * minimum(TreeNode * x){
     if(x == NULL) return NULL;
 
     TreeNode *current = x;
-
-    if(current->left == NULL) return x;
     
     while(current->left != NULL){
         current = current->left;

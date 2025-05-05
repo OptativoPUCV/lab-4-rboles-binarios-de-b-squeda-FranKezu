@@ -232,7 +232,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     
     // CASO 1
     if(current->right != NULL){
-        TreeNode *min = (minimum(current->right));
+        TreeNode *min = minimum(current->right);
         tree->current = min;
         return min->pair;
     }
@@ -241,10 +241,10 @@ Pair * nextTreeMap(TreeMap * tree) {
 
     void *key = current->pair->key;
     TreeNode *aux = current->parent;
-    while(aux != NULL && tree->lower_than(key, aux->pair->key))
+    while(aux != NULL && tree->lower_than(aux->pair->key, key))
         aux = aux->parent;
 
-    if(current != NULL){
+    if(aux != NULL){
         tree->current = aux;
         return aux->pair;
     }

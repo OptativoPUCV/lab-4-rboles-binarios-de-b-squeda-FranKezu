@@ -231,7 +231,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree == NULL || current == NULL) return NULL;
 
     if(current->right != NULL)
-        return(minimum(current->right));
+        return(minimum(current->right)->pair);
 
     return NULL;
 }

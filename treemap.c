@@ -231,15 +231,23 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree == NULL || current == NULL) return NULL;
     
     // CASO 1
-    if(current->right != NULL)
-        return(minimum(current->right)->pair);
+    if(current->right != NULL){
+        TreeNode *min = (minimum(current->right));
+        tree->current = min;
+        return min->pair;
+    }
 
     // CASO 2
 
     void *key = current->pair->key;
     TreeNode *aux = current->parent;
-    while(aux != NULL && aux->pair->key < key)
+    while(aux != NULL && tree->lower_than(key, aux->pair->key))
         aux = aux->parent;
 
-    return aux->pair;
+    if(current != NULL){
+        tree->current = aux;
+        return aux->pair;
+    }
+
+    return NULL;
 }
